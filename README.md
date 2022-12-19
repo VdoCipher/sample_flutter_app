@@ -32,7 +32,7 @@ This will add a line like this to your package's `pubspec.yaml` (and run an impl
 
 ```
 dependencies:
-  vdocipher_flutter: ^1.0.0-alpha.2
+  vdocipher_flutter: ^2.0.0
 ```
 
 Alternatively, your editor might support `flutter pub get`. Check the docs for your editor to learn more.
@@ -45,9 +45,9 @@ import 'package:vdocipher_flutter/vdocipher_flutter.dart';
 
 __Note:__ If you run into an error like this during android build:
 
-`minSdkVersion 16 cannot be smaller than version 17 declared in library [:vdocipher_flutter]`
+`minSdkVersion 17 cannot be smaller than version 18 declared in library [:vdocipher_flutter]`
 
-you will need to change the `minSdkVersion` value to a minimum of 17 in your app's `build.gradle` file.
+you will need to change the `minSdkVersion` value to a minimum of 18 in your app's `build.gradle` file.
 
 In your `app_project/android/app/build.gradle` file:
 
@@ -57,7 +57,7 @@ android {
 
     defaultConfig {
         // other properties...
-        minSdkVersion 17 // this must be 17 or higher
+        minSdkVersion 18 // this must be 18 or higher
 ```
 
 ### Example
