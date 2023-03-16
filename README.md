@@ -32,7 +32,7 @@ This will add a line like this to your package's `pubspec.yaml` (and run an impl
 
 ```
 dependencies:
-  vdocipher_flutter: ^2.0.0
+  vdocipher_flutter: ^2.2.1
 ```
 
 Alternatively, your editor might support `flutter pub get`. Check the docs for your editor to learn more.
