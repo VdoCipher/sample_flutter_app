@@ -46,7 +46,7 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
                   ? MediaQuery.of(context).size.height
                   : _getHeightForWidth(MediaQuery.of(context).size.width),
             ),
-            if (_controller == null || widget.controls)
+            if (_controller == null || widget.controls || MediaQuery.of(context).size.width < 300)
               SizedBox.shrink()
             else
               Container(

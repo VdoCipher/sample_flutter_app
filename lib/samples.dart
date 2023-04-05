@@ -8,5 +8,4 @@ const EmbedInfo SAMPLE_1 = EmbedInfo.streaming(
 const EmbedInfo SAMPLE_2 = EmbedInfo.streaming(
     otp: '20160313versASE323gks3zap5vOsyQXbEf6IgQ5j3jEFtAOn3uWQaCpLXKgnRif',
     playbackInfo:
-        'eyJ2aWRlb0lkIjoiMjY0ZDUxMWM1NDJhNGQyM2IwY2M3MzE3ODY3YWM0ODMifQ==',
-    embedInfoOptions: EmbedInfoOptions(enablePip: true));
+        'eyJ2aWRlb0lkIjoiMjY0ZDUxMWM1NDJhNGQyM2IwY2M3MzE3ODY3YWM0ODMifQ==');
