@@ -17,7 +17,7 @@ class Sample {
 }
 
 class VdoDownloadView extends StatefulWidget {
-  VdoDownloadView({Key? key}) : super(key: key);
+  const VdoDownloadView({Key? key}) : super(key: key);
 
   @override
   State<VdoDownloadView> createState() => _VdoDownloadViewState();
@@ -28,7 +28,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
   DownloadOptions? downloadOptions;
   VdoDownloadManager vdoDownloadManager = VdoDownloadManager.getInstance();
 
-  List<DownloadStatus> _downloadStatues = List.empty(growable: true);
+  final List<DownloadStatus> _downloadStatues = List.empty(growable: true);
 
   @override
   void onChanged(String mediaId, DownloadStatus downloadStatus) {
@@ -96,7 +96,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
   }
 
   _getDownloadList() async {
-    Query query = new Query();
+    Query query = Query();
     List<DownloadStatus> downloadStatusList =
         await vdoDownloadManager.query(query);
     for (DownloadStatus downloadStatus in downloadStatusList) {
@@ -130,7 +130,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
         automaticallyImplyLeading: false,
         toolbarHeight: 60,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Download',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
@@ -139,12 +139,12 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 itemCount: sampleMediaItems.length,
                 itemBuilder: (context, index) {
@@ -152,10 +152,10 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                       child: _getMediaDetailWidget(
                           sampleMediaItems.elementAt(index)));
                 }),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Downloads',
               style: TextStyle(
                 color: Colors.black,
@@ -163,19 +163,17 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Container(
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  itemCount: _downloadStatues.length,
-                  itemBuilder: (context, index) {
-                    return _buildItem(_downloadStatues.elementAt(index));
-                  }),
-            ),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: _downloadStatues.length,
+                itemBuilder: (context, index) {
+                  return _buildItem(_downloadStatues.elementAt(index));
+                }),
           ],
         ),
       ),
@@ -184,7 +182,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
 
   Widget _buildItem(DownloadStatus downloadStatus) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blue),
         color: Colors.white38,
@@ -199,7 +197,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                       name: '/playerui/sample/video',
                       arguments: downloadStatus.mediaInfo.mediaId),
                   builder: (BuildContext context) {
-                    return VdoPlaybackView();
+                    return const VdoPlaybackView();
                   },
                 ),
               );
@@ -218,8 +216,8 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                         child: (downloadStatus.poster != null)
                             ? Image.file(
                                 File.fromUri(Uri.file(downloadStatus.poster!)))
-                            : SizedBox.shrink()),
-                    SizedBox(
+                            : const SizedBox.shrink()),
+                    const SizedBox(
                       width: 10,
                     ),
                     Expanded(
@@ -232,7 +230,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -255,7 +253,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                         .resumeDownload(downloadStatus.mediaInfo.mediaId);
                   },
                   child: Text('Resume'.toUpperCase())),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               ElevatedButton(
@@ -264,7 +262,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                         .stopDownload(downloadStatus.mediaInfo.mediaId);
                   },
                   child: Text('Stop'.toUpperCase())),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               ElevatedButton(
@@ -281,7 +279,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
 
   _downloadMedia(Sample sample) {
     _showDownloadOptions(context, sample, (downloadSelections) {
-      DownloadRequest downloadRequest = new DownloadRequest(downloadSelections);
+      DownloadRequest downloadRequest = DownloadRequest(downloadSelections);
       vdoDownloadManager.enqueue(downloadRequest);
     });
   }
@@ -294,16 +292,16 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
         children: [
           Text(
             sample.mediaTitle.toUpperCase(),
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           IconButton(
               onPressed: () {
                 _downloadMedia(sample);
               },
-              icon: Icon(Icons.download_for_offline)),
+              icon: const Icon(Icons.download_for_offline)),
         ],
       ),
     );
@@ -312,7 +310,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
   _showDownloadOptions(BuildContext context, Sample sample,
       Function(DownloadSelections) onTrackSelection) {
     showModalBottomSheet(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
@@ -324,7 +322,7 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
           int selectedIndex = -1;
           return StatefulBuilder(builder: (context, setState) {
             if (downloadOptions == null) {
-              new OptionsDownloader().downloadOptionsWithOtp(
+              OptionsDownloader().downloadOptionsWithOtp(
                   sample.otp, sample.playbackInfo, sample.customPlayerId,
                   (options) {
                 setState(() {
@@ -336,91 +334,89 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
                 ? SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 100,
-                    child: Center(
+                    child: const Center(
                       child: CircularProgressIndicator(),
                     ),
                   )
-                : Container(
-                    child: Padding(
-                      padding: EdgeInsets.all(12.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Available tracks',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                          Text(
-                            'Select any one to download',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.grey),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          ListView.builder(
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.vertical,
-                              itemCount: downloadOptions!.allVideo.length,
-                              itemBuilder: (_, index) {
-                                int totalBitrate =
-                                    downloadOptions!.allVideo[index].bitrate! +
-                                        downloadOptions!.allAudio[0].bitrate!;
-                                String mediaSize = Utils.mediaSize(
-                                    totalBitrate,
-                                    downloadOptions!
-                                        .mediaInfo.duration.inMilliseconds);
-                                return Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: CheckboxListTile(
-                                    title: Text(
-                                        'Bitrate: ${totalBitrate ~/ 1024} kbps, ${mediaSize}'),
-                                    value: (index == selectedIndex),
-                                    onChanged: (value) {
-                                      setState(() {
-                                        if (value != null && value == true) {
-                                          selectedIndex = index;
-                                        }
-                                      });
-                                    },
-                                    secondary: const Icon(Icons.video_file),
-                                  ),
-                                );
-                              }),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Center(
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  if (selectedIndex == -1) {
-                                    Navigator.of(context).pop();
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(SnackBar(
-                                      content: Text("Select a track first"),
-                                    ));
-                                    return;
-                                  }
-                                  DownloadSelections downloadSelections =
-                                      new DownloadSelections(
-                                          downloadOptions!, selectedIndex, 0);
-                                  onTrackSelection(downloadSelections);
+                : Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          'Available tracks',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black),
+                        ),
+                        const Text(
+                          'Select any one to download',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        ListView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            scrollDirection: Axis.vertical,
+                            itemCount: downloadOptions!.allVideo.length,
+                            itemBuilder: (_, index) {
+                              int totalBitrate =
+                                  downloadOptions!.allVideo[index].bitrate! +
+                                      downloadOptions!.allAudio[0].bitrate!;
+                              String mediaSize = Utils.mediaSize(
+                                  totalBitrate,
+                                  downloadOptions!
+                                      .mediaInfo.duration.inMilliseconds);
+                              return SizedBox(
+                                width: MediaQuery.of(context).size.width,
+                                child: CheckboxListTile(
+                                  title: Text(
+                                      'Bitrate: ${totalBitrate ~/ 1024} kbps, $mediaSize'),
+                                  value: (index == selectedIndex),
+                                  onChanged: (value) {
+                                    setState(() {
+                                      if (value != null && value == true) {
+                                        selectedIndex = index;
+                                      }
+                                    });
+                                  },
+                                  secondary: const Icon(Icons.video_file),
+                                ),
+                              );
+                            }),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Center(
+                          child: ElevatedButton(
+                              onPressed: () {
+                                if (selectedIndex == -1) {
                                   Navigator.of(context).pop();
-                                },
-                                child: Text('Download')),
-                          ),
-                        ],
-                      ),
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(const SnackBar(
+                                    content: Text("Select a track first"),
+                                  ));
+                                  return;
+                                }
+                                DownloadSelections downloadSelections =
+                                    DownloadSelections(
+                                        downloadOptions!, selectedIndex, 0);
+                                onTrackSelection(downloadSelections);
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('Download')),
+                        ),
+                      ],
                     ),
                   );
           });

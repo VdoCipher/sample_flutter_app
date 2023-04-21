@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sample_flutter_app/controllers/vdo_custom_controller.dart';
 import 'package:sample_flutter_app/samples.dart';
@@ -6,22 +7,22 @@ import 'package:vdocipher_flutter/vdocipher_flutter.dart';
 class VdoPlaybackView extends StatefulWidget {
   final bool controls;
 
-  VdoPlaybackView({this.controls = true});
+  const VdoPlaybackView({Key? key, this.controls = true}) : super(key: key);
 
   @override
-  _VdoPlaybackViewState createState() => _VdoPlaybackViewState();
+  VdoPlaybackViewState createState() => VdoPlaybackViewState();
 }
 
-class _VdoPlaybackViewState extends State<VdoPlaybackView> {
+class VdoPlaybackViewState extends State<VdoPlaybackView> {
   VdoPlayerController? _controller;
   final double aspectRatio = 16 / 9;
   VdoPlayerValue? vdoPlayerValue;
-  ValueNotifier<bool> _isFullScreen = ValueNotifier(false);
+  final ValueNotifier<bool> _isFullScreen = ValueNotifier(false);
 
   @override
   Widget build(BuildContext context) {
     String? mediaId = ModalRoute.of(context)?.settings.arguments as String?;
-    EmbedInfo embedInfo = SAMPLE_2;
+    EmbedInfo embedInfo = sample_2;
     if (mediaId != null && mediaId.isNotEmpty) {
       embedInfo = EmbedInfo.offline(mediaId: mediaId);
     }
@@ -32,7 +33,11 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
             child: Stack(
           alignment: Alignment.center,
           children: [
-            Container(
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: _isFullScreen.value
+                  ? MediaQuery.of(context).size.height
+                  : _getHeightForWidth(MediaQuery.of(context).size.width),
               child: VdoPlayer(
                 embedInfo: embedInfo,
                 aspectRatio: aspectRatio,
@@ -41,38 +46,38 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
                 onPlayerCreated: _onPlayerCreated,
                 controls: widget.controls,
               ),
-              width: MediaQuery.of(context).size.width,
-              height: _isFullScreen.value
-                  ? MediaQuery.of(context).size.height
-                  : _getHeightForWidth(MediaQuery.of(context).size.width),
             ),
-            if (_controller == null || widget.controls || MediaQuery.of(context).size.width < 300)
-              SizedBox.shrink()
+            if (_controller == null ||
+                widget.controls ||
+                MediaQuery.of(context).size.width < 300)
+              const SizedBox.shrink()
             else
-              Container(
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: _isFullScreen.value
+                    ? MediaQuery.of(context).size.height
+                    : _getHeightForWidth(MediaQuery.of(context).size.width),
                 child: VdoCustomControllerView(
                   controller: _controller,
                   onError: _onVdoError,
                   onFullscreenChange: _onFullscreenChange,
                 ),
-                width: MediaQuery.of(context).size.width,
-                height: _isFullScreen.value
-                    ? MediaQuery.of(context).size.height
-                    : _getHeightForWidth(MediaQuery.of(context).size.width),
               )
           ],
         )),
         ValueListenableBuilder(
             valueListenable: _isFullScreen,
             builder: (context, dynamic value, child) {
-              return value ? SizedBox.shrink() : _nonFullScreenContent();
+              return value ? const SizedBox.shrink() : _nonFullScreenContent();
             }),
       ]),
     ));
   }
 
   _onVdoError(VdoError vdoError) {
-    print("Oops, the system encountered a problem: " + vdoError.message);
+    if (kDebugMode) {
+      print("Oops, the system encountered a problem: ${vdoError.message}");
+    }
   }
 
   _onPlayerCreated(VdoPlayerController? controller) {
@@ -86,13 +91,15 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
     controller!.addListener(() {
       VdoPlayerValue value = controller.value;
       setState(() {
-        this.vdoPlayerValue = value;
+        vdoPlayerValue = value;
       });
-      print("VdoControllerListner"
-          "\nloading: ${value.isLoading} "
-          "\nplaying: ${value.isPlaying} "
-          "\nbuffering: ${value.isBuffering} "
-          "\nended: ${value.isEnded}");
+      if (kDebugMode) {
+        print("VdoControllerListner"
+            "\nloading: ${value.isLoading} "
+            "\nplaying: ${value.isPlaying} "
+            "\nbuffering: ${value.isBuffering} "
+            "\nended: ${value.isEnded}");
+      }
       _printProperties(controller);
     });
   }
@@ -102,9 +109,11 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
         await controller?.getPlaybackProperty("totalPlayed") as int?;
     int? totalCovered =
         await controller?.getPlaybackProperty("totalCovered") as int?;
-    print("VdoControllerListener"
-        "\ntotalPlayed: ${totalPlayed} "
-        "\ntotalCovered: ${totalCovered} ");
+    if (kDebugMode) {
+      print("VdoControllerListener"
+          "\ntotalPlayed: $totalPlayed "
+          "\ntotalCovered: $totalCovered ");
+    }
   }
 
   _onFullscreenChange(isFullscreen) {
@@ -114,7 +123,7 @@ class _VdoPlaybackViewState extends State<VdoPlaybackView> {
   }
 
   _nonFullScreenContent() {
-    return Column(children: [
+    return Column(children: const [
       SizedBox(
         height: 10,
       ),

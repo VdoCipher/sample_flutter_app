@@ -5,10 +5,12 @@ import 'package:sample_flutter_app/views/vdoplayback_view.dart';
 import 'package:vdocipher_flutter/vdocipher_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -16,23 +18,25 @@ class MyApp extends StatelessWidget {
     ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHome(),
+      home: const MyHome(),
       navigatorObservers: [
         VdoPlayerController.navigatorObserver('/player/(.*)')
       ],
       theme: ThemeData(
           primaryColor: Colors.blue,
-          textTheme: TextTheme(bodyText1: TextStyle(fontSize: 14.0))),
+          textTheme: const TextTheme(bodyText1: TextStyle(fontSize: 14.0))),
     );
   }
 }
 
 class MyHome extends StatefulWidget {
+  const MyHome({Key? key}) : super(key: key);
+
   @override
-  _MyHomeState createState() => _MyHomeState();
+  MyHomeState createState() => MyHomeState();
 }
 
-class _MyHomeState extends State<MyHome> {
+class MyHomeState extends State<MyHome> {
   @override
   void initState() {
     super.initState();
@@ -46,14 +50,14 @@ class _MyHomeState extends State<MyHome> {
           centerTitle: true,
         ),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
+                  const Padding(
+                    padding: EdgeInsets.only(
                         left: 16.0, right: 16, top: 24, bottom: 16),
                     child: Text(
                       'Online Playback',
@@ -63,51 +67,47 @@ class _MyHomeState extends State<MyHome> {
                   ),
                   ElevatedButton(
                     onPressed: _goToVideoUiPlayback,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.play_circle,
-                              size: 48,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text('Play with inbuilt ui'.toUpperCase(),
-                                style: TextStyle(fontSize: 16)),
-                          ],
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          const Icon(
+                            Icons.play_circle,
+                            size: 48,
+                          ),
+                          const SizedBox(
+                            height: 4,
+                          ),
+                          Text('Play with inbuilt ui'.toUpperCase(),
+                              style: const TextStyle(fontSize: 16)),
+                        ],
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   ElevatedButton(
                     onPressed: _goToVideoPlayback,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.play_circle,
-                              size: 48,
-                            ),
-                            SizedBox(
-                              height: 4,
-                            ),
-                            Text('Play with custom ui'.toUpperCase(),
-                                style: TextStyle(fontSize: 16)),
-                          ],
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          const Icon(
+                            Icons.play_circle,
+                            size: 48,
+                          ),
+                          const SizedBox(
+                            height: 4,
+                          ),
+                          Text('Play with custom ui'.toUpperCase(),
+                              style: const TextStyle(fontSize: 16)),
+                        ],
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
+                  const Padding(
+                    padding: EdgeInsets.only(
                         left: 16.0, right: 16, top: 48, bottom: 16),
                     child: Text(
                       'Offline Playback',
@@ -118,9 +118,10 @@ class _MyHomeState extends State<MyHome> {
                   ElevatedButton(
                     onPressed: _goToVdoDownloadView,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 12, bottom: 12),
+                      padding: const EdgeInsets.only(
+                          left: 32.0, right: 32.0, top: 12, bottom: 12),
                       child: Text('Download'.toUpperCase(),
-                          style: TextStyle(fontSize: 16)),
+                          style: const TextStyle(fontSize: 16)),
                     ),
                   )
                 ]),
@@ -131,9 +132,9 @@ class _MyHomeState extends State<MyHome> {
   void _goToVideoPlayback() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        settings: RouteSettings(name: '/player/sample/video'),
+        settings: const RouteSettings(name: '/player/sample/video'),
         builder: (BuildContext context) {
-          return VdoPlaybackView(
+          return const VdoPlaybackView(
             controls: false,
           );
         },
@@ -144,9 +145,9 @@ class _MyHomeState extends State<MyHome> {
   void _goToVideoUiPlayback() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        settings: RouteSettings(name: '/playerui/sample/video'),
+        settings: const RouteSettings(name: '/playerui/sample/video'),
         builder: (BuildContext context) {
-          return VdoPlaybackView(
+          return const VdoPlaybackView(
             controls: true,
           );
         },
@@ -157,9 +158,9 @@ class _MyHomeState extends State<MyHome> {
   void _goToVdoDownloadView() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        settings: RouteSettings(name: '/offline/download'),
+        settings: const RouteSettings(name: '/offline/download'),
         builder: (BuildContext context) {
-          return VdoDownloadView();
+          return const VdoDownloadView();
         },
       ),
     );

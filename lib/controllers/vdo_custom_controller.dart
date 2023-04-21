@@ -12,11 +12,11 @@ class VdoCustomControllerView extends StatefulWidget {
   final Function(bool)? onFullscreenChange;
   final Function(VdoError vdoError) onError;
 
-  VdoCustomControllerView(
+  const VdoCustomControllerView(
       {Key? key,
-        required this.controller,
-        this.onFullscreenChange,
-        required this.onError})
+      required this.controller,
+      this.onFullscreenChange,
+      required this.onError})
       : super(key: key);
 
   @override
@@ -28,8 +28,8 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
   late VdoPlayerValue _playerValue;
   late Size _windowSize;
   bool _isVisibleControls = true;
-  double _iconSize = 40.0;
-  double _smallIconSize = 30.0;
+  final double _iconSize = 40.0;
+  final double _smallIconSize = 30.0;
   bool _isFullScreenMode = false;
   double _currentPlaybackTime = 0;
   bool _isScrubbing = false;
@@ -81,19 +81,19 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
   _updatePlayerState() {
     setState(() {
       _playerValue = widget.controller!.value;
-      if (!this._isScrubbing && !_playerValue.isBuffering) {
+      if (!_isScrubbing && !_playerValue.isBuffering) {
         double playerPosition = _playerValue.position.inMilliseconds.toDouble();
         double playbackDuration =
-        _playerValue.duration.inMilliseconds.toDouble();
+            _playerValue.duration.inMilliseconds.toDouble();
         if (0 <= playerPosition && playerPosition <= playbackDuration) {
           _currentPlaybackTime = playerPosition;
         }
       }
-      if (this._currentLoadingState != _playerValue.isLoading &&
+      if (_currentLoadingState != _playerValue.isLoading &&
           _playerValue.isLoading == false) {
         _cancelAndRestartTimer();
       }
-      this._currentLoadingState = _playerValue.isLoading;
+      _currentLoadingState = _playerValue.isLoading;
     });
   }
 
@@ -104,15 +104,15 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
     return Platform.isIOS
         ? _vdoControlArea()
         : WillPopScope(
-        onWillPop: () async {
-          if (_isFullScreenMode) {
-            _toggleFullScreenMode();
-            return false;
-          }
+            onWillPop: () async {
+              if (_isFullScreenMode) {
+                _toggleFullScreenMode();
+                return false;
+              }
 
-          return true;
-        },
-        child: _vdoControlArea());
+              return true;
+            },
+            child: _vdoControlArea());
   }
 
   _vdoControlArea() {
@@ -139,47 +139,47 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
                     Positioned.fill(
                         child: (_playerValue.isLoading || showError)
                             ? Container(
-                          child: Text(''),
-                          color: Colors.black,
-                        )
-                            : SizedBox.shrink()),
+                                color: Colors.black,
+                                child: const Text(''),
+                              )
+                            : const SizedBox.shrink()),
                     // Background tint when controls are visible
                     Positioned(
                         child: !showBackgroundTint
-                            ? SizedBox.shrink()
+                            ? const SizedBox.shrink()
                             : Container(
-                            width: _windowSize.width,
-                            color: Colors.black.withOpacity(0.25))),
+                                width: _windowSize.width,
+                                color: Colors.black.withOpacity(0.25))),
 
                     // Progress indicator
                     Positioned.fill(
                         child: !showProgressIndicator
-                            ? SizedBox.shrink()
-                            : Center(
-                            child: SizedBox(
-                                width: 50,
-                                height: 50,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 4,
-                                  color: Colors.white,
-                                )))),
+                            ? const SizedBox.shrink()
+                            : const Center(
+                                child: SizedBox(
+                                    width: 50,
+                                    height: 50,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 4,
+                                      color: Colors.white,
+                                    )))),
 
                     // Error view
                     Positioned.fill(
                         child: !showError
-                            ? SizedBox.shrink()
+                            ? const SizedBox.shrink()
                             : Center(child: _errorInfo())),
 
                     // Video Overlay controllers
                     showOverlayControls
                         ? _vdoOverlayController()
-                        : SizedBox.shrink(),
+                        : const SizedBox.shrink(),
 
                     // Video seek bar
                     Positioned(
                       child: showOverlayControls
                           ? _vdoProgress()
-                          : SizedBox.shrink(),
+                          : const SizedBox.shrink(),
                       bottom: 30.0,
                       left: 0,
                       right: 0,
@@ -189,7 +189,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
                     Positioned(
                         child: showOverlayControls
                             ? _bottomControlPanel()
-                            : SizedBox.shrink(),
+                            : const SizedBox.shrink(),
                         bottom: 6.0,
                         left: 0,
                         right: 0),
@@ -261,10 +261,10 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
 
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Icon(Icons.error, size: _smallIconSize, color: Colors.white),
-      Text('Error code: ' + _playerValue.vdoError!.code.toString(),
-          style: TextStyle(fontSize: 16, color: Colors.white)),
+      Text('Error code: ${_playerValue.vdoError!.code}',
+          style: const TextStyle(fontSize: 16, color: Colors.white)),
       Text(_playerValue.vdoError!.message,
-          style: TextStyle(fontSize: 16, color: Colors.white))
+          style: const TextStyle(fontSize: 16, color: Colors.white))
     ]);
   }
 
@@ -272,8 +272,8 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
     IconData icon = _playerValue.isEnded
         ? Icons.replay
         : _playerValue.isPlaying
-        ? Icons.pause
-        : Icons.play_arrow;
+            ? Icons.pause
+            : Icons.play_arrow;
     return Icon(
       icon,
       color: Colors.white,
@@ -284,12 +284,12 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
   /// Video Progress seekbar
   _vdoProgress() {
     return Container(
-        margin: EdgeInsets.only(left: 1, right: 1.0),
+        margin: const EdgeInsets.only(left: 1, right: 1.0),
         child: SliderTheme(
             data: SliderTheme.of(context).copyWith(
               trackHeight: 4,
-              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8),
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 14),
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
+              overlayShape: const RoundSliderOverlayShape(overlayRadius: 14),
               // trackHeight: 2.0
             ),
             child: Slider(
@@ -299,7 +299,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
               activeColor: Colors.redAccent,
               inactiveColor: Colors.grey,
               onChangeStart: (val) {
-                this._isScrubbing = true;
+                _isScrubbing = true;
                 _hideTimer?.cancel();
               },
               onChanged: (val) {
@@ -311,13 +311,13 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
                 widget.controller!
                     .seek(Duration(milliseconds: val.round()))
                     .then((value) => {
-                  Future.delayed(Duration(milliseconds: 500), () {
-                    setState(() {
-                      this._isScrubbing = false;
-                    });
-                  }),
-                  this._cancelAndRestartTimer()
-                });
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            setState(() {
+                              _isScrubbing = false;
+                            });
+                          }),
+                          _cancelAndRestartTimer()
+                        });
               },
             )));
   }
@@ -327,23 +327,23 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Container(
-            margin: EdgeInsets.only(left: 14.0, right: 14.0),
+            margin: const EdgeInsets.only(left: 14.0, right: 14.0),
             child: Text(
                 '${vdoTimeFormatter(_playerValue.position.inSeconds)} / ${vdoTimeFormatter(_playerValue.duration.inSeconds)}',
-                style: TextStyle(fontSize: 20, color: Colors.white)))
+                style: const TextStyle(fontSize: 20, color: Colors.white)))
       ]),
       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         _navItem(
             onClick: () => _showPlaybackSpeedOptions(),
             iconData: Icons.speed_sharp),
         Platform.isIOS
-            ? SizedBox.shrink()
+            ? const SizedBox.shrink()
             : _navItem(
-            onClick: () => _showQualityOptions(), iconData: Icons.hd),
+                onClick: () => _showQualityOptions(), iconData: Icons.hd),
         _navItem(
             onClick: () => _toggleFullScreenMode(),
             iconData:
-            _isFullScreenMode ? Icons.fullscreen_exit : Icons.fullscreen),
+                _isFullScreenMode ? Icons.fullscreen_exit : Icons.fullscreen),
       ]),
     ]);
   }
@@ -351,13 +351,13 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
   _showPlaybackSpeedOptions() {
     final double playbackSpeed = _playerValue.playbackSpeed;
     final List<double> playbackSpeedOptions =
-    _playerValue.playbackSpeedOptions.length == 0
-        ? PlaybackSpeedOptions
-        : _playerValue.playbackSpeedOptions;
+        _playerValue.playbackSpeedOptions.isEmpty
+            ? defaultPlaybackSpeedOptions
+            : _playerValue.playbackSpeedOptions;
 
     final List<Widget> items = [];
 
-    playbackSpeedOptions.forEach((i) {
+    for (var i in playbackSpeedOptions) {
       bool isSelected = i == playbackSpeed;
       String label =
           "${(i == 1 ? "Normal" : "${i.toString()}x")} ${isSelected ? " ✔️" : ""}";
@@ -367,7 +367,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
           widget.controller!.setPlaybackSpeed(i);
         }
       }));
-    });
+    }
 
     _showModalBottomSheet(items);
   }
@@ -383,12 +383,9 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
 
       final int totalBitrateKbps = track.bitrate! ~/ 1024;
       final String isAdaptiveMsg = isAdaptive ? " (Auto)" : "";
-      final String isSelectedMsg = isSelected ? (isAdaptiveMsg + "  ✔️") : "";
-      final String itemName = totalBitrateKbps.toString() +
-          " kbps (" +
-          _combinedDataExpenditurePerHour(track, null) +
-          ")" +
-          isSelectedMsg;
+      final String isSelectedMsg = isSelected ? ("$isAdaptiveMsg  ✔️") : "";
+      final String itemName =
+          "$totalBitrateKbps kbps (${_combinedDataExpenditurePerHour(track, null)})$isSelectedMsg";
       items.add(_buildTrackModalItem(itemName, () {
         Navigator.pop(context);
         if (!isSelected) {
@@ -419,7 +416,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
         onTap: onTap as void Function()?,
         child: Container(
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Text(text)));
   }
 
@@ -458,7 +455,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
 
   Container _navItem({Function? onClick, IconData? iconData}) {
     return Container(
-        margin: EdgeInsets.only(left: 5.0, right: 5.0),
+        margin: const EdgeInsets.only(left: 5.0, right: 5.0),
         child: InkWell(
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
@@ -514,10 +511,10 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
     if (megaBytesPerHour < 1) {
       return "1 MB per hour";
     } else if (megaBytesPerHour < 1024) {
-      return megaBytesPerHour.toInt().toString() + " MB per hour";
+      return "${megaBytesPerHour.toInt()} MB per hour";
     } else {
       double gigaBytesPerHour = megaBytesPerHour / 1024;
-      return gigaBytesPerHour.toStringAsFixed(2) + " GB per hour";
+      return "${gigaBytesPerHour.toStringAsFixed(2)} GB per hour";
     }
   }
 }
