@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "5c8dda868d6d5ed828d345c731581792c6486d2b648bf7e70442e8846c2632fb"
+build_start_time: [1691752572, 278466000]
+build_end_time: [1691752572, 319746000]
+inputs:
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/SwiftVdocipherFlutterPlugin.swift"
+  : !private [1691732029, 856004816]
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdoPlayerPlatformView.swift"
+  : !private [1691732029, 856601340]
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdoPlayerPlatformViewFactory.swift"
+  : !private [1691732029, 857130699]

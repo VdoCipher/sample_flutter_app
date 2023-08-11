@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sample_flutter_app/samples.dart';
 import 'package:sample_flutter_app/views/vdo_download_view.dart';
 import 'package:sample_flutter_app/views/vdoplayback_view.dart';
 import 'package:vdocipher_flutter/vdocipher_flutter.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       ],
       theme: ThemeData(
           primaryColor: Colors.blue,
-          textTheme: const TextTheme(bodyText1: TextStyle(fontSize: 14.0))),
+          textTheme: const TextTheme(bodyLarge: TextStyle(fontSize: 14.0))),
     );
   }
 }
@@ -62,7 +64,7 @@ class MyHomeState extends State<MyHome> {
                     child: Text(
                       'Online Playback',
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                   ),
                   ElevatedButton(
@@ -88,7 +90,13 @@ class MyHomeState extends State<MyHome> {
                     height: 24,
                   ),
                   ElevatedButton(
-                    onPressed: _goToVideoPlayback,
+                    onPressed: () {
+                      if (kIsWeb) {
+                        _goToVideoPlaybackNaiveUi();
+                      } else {
+                        _goToVideoPlayback();
+                      }
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -100,30 +108,35 @@ class MyHomeState extends State<MyHome> {
                           const SizedBox(
                             height: 4,
                           ),
-                          Text('Play with custom ui'.toUpperCase(),
+                          Text(
+                              kIsWeb
+                                  ? 'Play with native ui'.toUpperCase()
+                                  : 'Play with custom ui'.toUpperCase(),
                               style: const TextStyle(fontSize: 16)),
                         ],
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                        left: 16.0, right: 16, top: 48, bottom: 16),
-                    child: Text(
-                      'Offline Playback',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  if (!kIsWeb)
+                    const Padding(
+                      padding: EdgeInsets.only(
+                          left: 16.0, right: 16, top: 48, bottom: 16),
+                      child: Text(
+                        'Offline Playback',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w500),
+                      ),
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: _goToVdoDownloadView,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 32.0, right: 32.0, top: 12, bottom: 12),
-                      child: Text('Download'.toUpperCase(),
-                          style: const TextStyle(fontSize: 16)),
+                  if (!kIsWeb)
+                    ElevatedButton(
+                      onPressed: _goToVdoDownloadView,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 32.0, right: 32.0, top: 12, bottom: 12),
+                        child: Text('Download'.toUpperCase(),
+                            style: const TextStyle(fontSize: 16)),
+                      ),
                     ),
-                  )
                 ]),
           ),
         ));
@@ -136,6 +149,22 @@ class MyHomeState extends State<MyHome> {
         builder: (BuildContext context) {
           return const VdoPlaybackView(
             controls: false,
+            embedInfo: sample_1,
+          );
+        },
+      ),
+    );
+  }
+
+  /// Illustrate web playback utilizing native user interface.
+  void _goToVideoPlaybackNaiveUi() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        settings: const RouteSettings(name: '/player-native/sample/video'),
+        builder: (BuildContext context) {
+          return const VdoPlaybackView(
+            embedInfo: sample_2,
+            controls: true,
           );
         },
       ),
@@ -145,9 +174,10 @@ class MyHomeState extends State<MyHome> {
   void _goToVideoUiPlayback() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        settings: const RouteSettings(name: '/playerui/sample/video'),
+        settings: const RouteSettings(name: '/player-ui/sample/video'),
         builder: (BuildContext context) {
           return const VdoPlaybackView(
+            embedInfo: sample_1,
             controls: true,
           );
         },

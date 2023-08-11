@@ -119,6 +119,7 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
     bool showProgressIndicator =
         _playerValue.isLoading || _playerValue.isBuffering;
     bool showError = _playerValue.vdoError != null;
+    showProgressIndicator = showProgressIndicator && !showError;
     bool showOverlayControls = _isVisibleControls && !showError;
     bool showBackgroundTint = showError || _isVisibleControls;
 
@@ -334,6 +335,9 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
       ]),
       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         _navItem(
+            onClick: () => _showSubtitleOptions(),
+            iconData: Icons.closed_caption),
+        _navItem(
             onClick: () => _showPlaybackSpeedOptions(),
             iconData: Icons.speed_sharp),
         Platform.isIOS
@@ -366,6 +370,44 @@ class _VdoCustomControllerViewState extends State<VdoCustomControllerView>
         if (!isSelected) {
           widget.controller!.setPlaybackSpeed(i);
         }
+      }));
+    }
+
+    _showModalBottomSheet(items);
+  }
+
+  _showSubtitleOptions() {
+    final List<SubtitleTrack> subtitleTracks = _playerValue.subtitleTracks;
+    final SubtitleTrack? selectedSubtitleTrack = _playerValue.subtitleTrack;
+    final List<Widget> items = [];
+
+    for (SubtitleTrack track in subtitleTracks) {
+      final bool isSelected = track == selectedSubtitleTrack;
+
+      final String? language = track.language;
+      final String isSelectedMsg = isSelected ? ("✔️") : "";
+      final String itemName = "$language $isSelectedMsg";
+      items.add(_buildTrackModalItem(itemName, () {
+        Navigator.pop(context);
+        if (!isSelected) {
+          widget.controller!.setSubtitleLanguage(track.language);
+        }
+      }));
+    }
+
+    if (items.isNotEmpty) {
+      final bool isSelected = selectedSubtitleTrack == null;
+      final String isSelectedMsg = isSelected ? ("✔️") : "";
+      // Add widget to set track selection back to adaptive mode
+      items.insert(
+          0,
+          _buildTrackModalItem("Off $isSelectedMsg", () {
+            Navigator.pop(context);
+            widget.controller!.setSubtitleLanguage(null);
+          }));
+    } else if (items.isEmpty) {
+      items.add(_buildTrackModalItem("Off", () {
+        Navigator.pop(context);
       }));
     }
 

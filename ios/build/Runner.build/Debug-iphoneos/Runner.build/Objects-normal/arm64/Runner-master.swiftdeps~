@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "a21a28feb77a7e36be51e48885a592bfcee10069fad909092b5ce16ea67dede1"
+build_start_time: [1691752577, 112922000]
+build_end_time: [1691752577, 154347000]
+inputs:
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Runner/AppDelegate.swift": !private [1678880079, 974170156]

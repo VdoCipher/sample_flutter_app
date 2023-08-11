@@ -32,7 +32,7 @@ This will add a line like this to your package's `pubspec.yaml` (and run an impl
 
 ```
 dependencies:
-  vdocipher_flutter: ^2.2.1
+  vdocipher_flutter: ^2.3.2
 ```
 
 Alternatively, your editor might support `flutter pub get`. Check the docs for your editor to learn more.
@@ -59,6 +59,9 @@ android {
         // other properties...
         minSdkVersion 18 // this must be 18 or higher
 ```
+
+> **Note**
+> For SDK v2.2.0 and above, please use [Theme.AppCompat theme](https://github.com/VdoCipher/sample_flutter_app/blob/master/android/app/src/main/res/values/styles.xml#:~:text=%3Cstyle%20name%3D%22NormalTheme%22%20parent%3D%22Theme.AppCompat.Light.NoActionBar%22%3E) with MainActivity.java and [extend from FlutterFragmentActivity](https://github.com/VdoCipher/sample_flutter_app/blob/master/android/app/src/main/java/com/vdocipher/sample_flutter_app/MainActivity.java#:~:text=public%20class%20MainActivity%20extends%20FlutterFragmentActivity). For a better understanding, please take a look at our [sample app](https://github.com/VdoCipher/sample_flutter_app).
 
 ### Example
 

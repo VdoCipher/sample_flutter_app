@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/build/ios/Debug-iphoneos/vdocipher_flutter/vdocipher_flutter.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/vdocipher_flutter.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/build/ios/Debug-iphoneos/vdocipher_flutter/vdocipher_flutter.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "vdocipher_flutter-Swift.h",
+      'external-contents': "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/vdocipher_flutter.build/unextended-interface-header.h",
+    }]
+    }]
+}

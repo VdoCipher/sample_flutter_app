@@ -1,0 +1,10 @@
+framework module vdocipher_flutter {
+  umbrella header "vdocipher_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module vdocipher_flutter.__Swift {
+  exclude header "vdocipher_flutter-Swift.h"
+}

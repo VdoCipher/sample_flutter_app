@@ -108,18 +108,19 @@ class _VdoDownloadViewState extends State<VdoDownloadView>
 
   @override
   Widget build(BuildContext context) {
+    /// Replace media id, otp, playback info with one of your account.
     Sample sample1 = Sample(
-        "7811c48b3a0f40f5abeffae71ce4d3e0",
-        "Elephant Dream",
-        "20160313versASE3237s0dsh3BLe1blSsdhRUHIEkvnHjqvP0DlCU1SF45Rb42sq",
-        "eyJ2aWRlb0lkIjoiNzgxMWM0OGIzYTBmNDBmNWFiZWZmYWU3MWNlNGQzZTAifQ==",
+        "19d7877702ae4a46b0d70e20e8e3ac72",
+        "Big Buck Bunny.mp4",
+        "20160313versASE323Gmj8Bd3P7JfC2V1J0REIwnghToN08eCoq0tRR7Q9Xls9jv",
+        "eyJ2aWRlb0lkIjoiMTlkNzg3NzcwMmFlNGE0NmIwZDcwZTIwZThlM2FjNzIifQ==",
         "");
 
     Sample sample2 = Sample(
-      "b40e3faaabd841ac86dbeea9073f38c3",
-      "Big Buck Bunny",
-      "20160313versASE323kp60ptZkUUEtxpHqRbIwCDCmWc4QPuZO7mQ9bJ5vZGxeIJ",
-      "eyJ2aWRlb0lkIjoiYjQwZTNmYWFhYmQ4NDFhYzg2ZGJlZWE5MDczZjM4YzMifQ==",
+      "eab156ec78374dcc9551a0205552dda7",
+      "Tears of Steel",
+      "20160313versASE323N63NoSM6E5HQRIIrVj5lw7ohbOPnAb4oWFgmg4q1O7g1EP",
+      "eyJ2aWRlb0lkIjoiZWFiMTU2ZWM3ODM3NGRjYzk1NTFhMDIwNTU1MmRkYTcifQ==",
       "",
     );
 
