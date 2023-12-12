@@ -1,16 +1,13 @@
 PODS:
   - Flutter (1.0.0)
-  - vdocipher_flutter (2.3.2):
+  - vdocipher_flutter (2.5.0):
     - Flutter
-    - VdoFramework (= 2.4.3)
-  - VdoFramework (2.4.3)
-  - wakelock (0.0.1):
-    - Flutter
+    - VdoFramework (= 2.5.4)
+  - VdoFramework (2.5.4)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - vdocipher_flutter (from `.symlinks/plugins/vdocipher_flutter/ios`)
-  - wakelock (from `.symlinks/plugins/wakelock/ios`)
 
 SPEC REPOS:
   trunk:
@@ -21,14 +18,11 @@ EXTERNAL SOURCES:
     :path: Flutter
   vdocipher_flutter:
     :path: ".symlinks/plugins/vdocipher_flutter/ios"
-  wakelock:
-    :path: ".symlinks/plugins/wakelock/ios"
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  vdocipher_flutter: 9522c3175927d19d0cd7fbc0023fb7484f308207
-  VdoFramework: 52c08e03ecd2b66966e34d08e2dd1af4270ae1d0
-  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  vdocipher_flutter: d79362ceb85143dd1e900d8ed78a157e4f033a92
+  VdoFramework: e8e3478c1da4a8cc505df0e5266f2f06150bf359
 
 PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
 

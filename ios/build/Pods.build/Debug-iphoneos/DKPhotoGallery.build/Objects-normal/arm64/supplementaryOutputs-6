@@ -1,0 +1,15 @@
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/DKPhotoIncrementalIndicator.swift":
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoIncrementalIndicator.d"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoIncrementalIndicator.o"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoIncrementalIndicator.dia"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoIncrementalIndicator.swiftdeps"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/Preview/PlayerPreview/DKPhotoPlayerPreviewVC.swift":
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPlayerPreviewVC.dia"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPlayerPreviewVC.swiftdeps"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPlayerPreviewVC.o"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPlayerPreviewVC.d"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/Preview/PDFPreview/DKPhotoPDFPreviewVC.swift":
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPDFPreviewVC.dia"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPDFPreviewVC.swiftdeps"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPDFPreviewVC.d"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoPDFPreviewVC.o"

@@ -1,0 +1,15 @@
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/Resource/DKPhotoGalleryResource.swift":
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryResource.d"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryResource.o"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryResource.swiftdeps"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryResource.dia"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/DKPhotoGalleryScrollView.swift":
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryScrollView.d"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryScrollView.o"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryScrollView.swiftdeps"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryScrollView.dia"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKPhotoGallery/DKPhotoGallery/Transition/DKPhotoGalleryTransitionController.swift":
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryTransitionController.swiftdeps"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryTransitionController.d"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryTransitionController.o"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKPhotoGallery.build/Objects-normal/arm64/DKPhotoGalleryTransitionController.dia"

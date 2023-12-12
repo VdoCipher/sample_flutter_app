@@ -1,0 +1,15 @@
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailImageCell.swift":
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailImageCell.o"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailImageCell.d"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailImageCell.swiftdeps"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailImageCell.dia"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/DKAssetGroupDetailVC.swift":
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailVC.dia"
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailVC.o"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailVC.d"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailVC.swiftdeps"
+"/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailCameraCell.swift":
+  object: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailCameraCell.o"
+  diagnostics: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailCameraCell.dia"
+  swift-dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailCameraCell.swiftdeps"
+  dependencies: "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/DKImagePickerController.build/Objects-normal/arm64/DKAssetGroupDetailCameraCell.d"

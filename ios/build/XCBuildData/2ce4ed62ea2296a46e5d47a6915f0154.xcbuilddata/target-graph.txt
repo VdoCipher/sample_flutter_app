@@ -1,0 +1,13 @@
+Target dependency graph (5 targets)
+Flutter in Pods, no dependencies
+VdoFramework in Pods, no dependencies
+vdocipher_flutter in Pods, depends on:
+Flutter in Pods (explicit)
+VdoFramework in Pods (explicit)
+Pods-Runner in Pods, depends on:
+Flutter in Pods (explicit)
+VdoFramework in Pods (explicit)
+vdocipher_flutter in Pods (explicit)
+Runner in Runner, depends on:
+Pods-Runner in Pods (implicit dependency via file 'Pods_Runner.framework' in build phase 'Link Binary')
+vdocipher_flutter in Pods (implicit dependency via options '-framework vdocipher_flutter' in build setting 'OTHER_LDFLAGS')

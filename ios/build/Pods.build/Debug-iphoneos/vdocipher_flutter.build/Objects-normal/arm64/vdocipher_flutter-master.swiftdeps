@@ -1,11 +1,11 @@
 version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
-options: "5c8dda868d6d5ed828d345c731581792c6486d2b648bf7e70442e8846c2632fb"
-build_start_time: [1691752572, 278466000]
-build_end_time: [1691752573, 967269000]
+options: "b8209d4121e39b90da8d42766515f6ed4f6b2e0c7cf3c2bf331966a1850fbf06"
+build_start_time: [1702370438, 538311000]
+build_end_time: [1702370440, 973752000]
 inputs:
-  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/SwiftVdocipherFlutterPlugin.swift"
-  : [1691732029, 856004816]
-  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdoPlayerPlatformView.swift"
-  : [1691732029, 856601340]
-  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdoPlayerPlatformViewFactory.swift"
-  : [1691732029, 857130699]
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.5.0/ios/Classes/SwiftVdocipherFlutterPlugin.swift"
+  : [1702368736, 932614249]
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.5.0/ios/Classes/VdoPlayerPlatformView.swift"
+  : [1702368736, 933263030]
+  ? "/Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.5.0/ios/Classes/VdoPlayerPlatformViewFactory.swift"
+  : [1702368736, 933774647]

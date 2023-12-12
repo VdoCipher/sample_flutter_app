@@ -1,0 +1,51 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "5e09a0a64edbc8e3a27a4d8e4fa6d267e9f8ae62929088856f17427965cfb972"
+build_start_time: [1702369879, 213618000]
+build_end_time: [1702369892, 187559000]
+inputs:
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/DKImageBaseManager.swift"
+  : [1698390687, 220327784]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/DKImageDataManager.swift"
+  : [1698390687, 220176330]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/DKImageGroupDataManager.swift"
+  : [1698390687, 220252786]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/Model/DKAsset+Export.swift"
+  : [1698390687, 220556695]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/Model/DKAsset+Fetch.swift"
+  : [1698390687, 220791064]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/Model/DKAsset.swift"
+  : [1698390687, 220885520]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImageDataManager/Model/DKAssetGroup.swift"
+  : [1698390687, 220675858]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/DKImageAssetExporter.swift"
+  : [1698390687, 221200012]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/DKImageExtensionController.swift"
+  : [1698390687, 221101723]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/DKImagePickerController.swift"
+  : [1698390687, 221303384]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/DKImagePickerControllerBaseUIDelegate.swift"
+  : [1698390687, 221398423]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/DKPopoverViewController.swift"
+  : [1698390687, 221485754]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/Resource/DKImagePickerControllerResource.swift"
+  : [1698390687, 229648754]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupCellItemProtocol.swift"
+  : [1698390687, 222228444]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailBaseCell.swift"
+  : [1698390687, 222308358]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailCameraCell.swift"
+  : [1698390687, 222070865]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailImageCell.swift"
+  : [1698390687, 222386065]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/Cell/DKAssetGroupDetailVideoCell.swift"
+  : [1698390687, 222149321]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/DKAssetGroupDetailVC.swift"
+  : [1698390687, 221893036]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/DKAssetGroupGridLayout.swift"
+  : [1698390687, 221791705]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/DKAssetGroupListVC.swift"
+  : [1698390687, 222473146]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/DKImagePickerController/View/DKPermissionView.swift"
+  : [1698390687, 221698916]
+  ? "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/DKImagePickerController/Sources/Extensions/DKImageExtensionGallery.swift"
+  : [1698390687, 219847630]

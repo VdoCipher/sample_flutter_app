@@ -1,8 +1,8 @@
 dependencies: \
   /Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Pods.build/Debug-iphoneos/vdocipher_flutter.build/module.modulemap \
-  /Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdocipherFlutterPlugin.m \
+  /Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.5.0/ios/Classes/VdocipherFlutterPlugin.m \
   /Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/Target\ Support\ Files/vdocipher_flutter/vdocipher_flutter-prefix.pch \
-  /Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.3.2/ios/Classes/VdocipherFlutterPlugin.h \
+  /Users/mdnafiskhan/development/flutter/.pub-cache/hosted/pub.dartlang.org/vdocipher_flutter-2.5.0/ios/Classes/VdocipherFlutterPlugin.h \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Modules/module.modulemap \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/Flutter.h \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterAppDelegate.h \
@@ -20,4 +20,4 @@ dependencies: \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
   /Users/mdnafiskhan/development/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64/Flutter.framework/Headers/FlutterViewController.h \
-  /Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/build/ios/Debug-iphoneos/vdocipher_flutter/vdocipher_flutter.framework/Headers/vdocipher_flutter-Swift.h
+  /Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/build/Debug-iphoneos/vdocipher_flutter/vdocipher_flutter.framework/Headers/vdocipher_flutter-Swift.h

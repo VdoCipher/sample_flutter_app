@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-ios ]
+flags:           [ not_app_extension_safe ]
+install-name:    '@rpath/wakelock_plus.framework/wakelock_plus'
+exports:
+  - targets:         [ arm64-ios ]
+    symbols:         [ _FLTWakelockPlusApiGetCodec, _FLTWakelockPlusApiSetup, _wakelock_plusVersionNumber, 
+                       _wakelock_plusVersionString ]
+    objc-classes:    [ FLTIsEnabledMessage, FLTToggleMessage, FLTWakelockPlusApiCodecReader, 
+                       FLTWakelockPlusApiCodecReaderWriter, FLTWakelockPlusApiCodecWriter, 
+                       PodsDummy_wakelock_plus, WakelockPlusPlugin ]
+...

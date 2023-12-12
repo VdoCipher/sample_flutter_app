@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "6221948bd8a7d6e001cbcf29046ec622652249ade263789b111d50e41211b86d"
+build_start_time: [1702369866, 458627000]
+build_end_time: [1702369866, 537393000]
+inputs:
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/NSImage+SwiftyGif.swift": !private [1698390687, 266743765]
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/NSImageView+SwiftyGif.swift": !private [1698390687, 268113063]
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/ObjcAssociatedWeakObject.swift": !private [1698390687, 266986134]
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/SwiftyGifManager.swift": !private [1698390687, 267783988]
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/UIImage+SwiftyGif.swift": !private [1698390687, 267254543]
+  "/Users/mdnafiskhan/AndroidStudioProjects/sample_flutter_app/ios/Pods/SwiftyGif/SwiftyGif/UIImageView+SwiftyGif.swift": !private [1698390687, 266347275]

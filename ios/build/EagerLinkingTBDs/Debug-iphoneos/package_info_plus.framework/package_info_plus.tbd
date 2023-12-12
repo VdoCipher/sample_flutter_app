@@ -1,0 +1,10 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-ios ]
+flags:           [ not_app_extension_safe ]
+install-name:    '@rpath/package_info_plus.framework/package_info_plus'
+exports:
+  - targets:         [ arm64-ios ]
+    symbols:         [ _package_info_plusVersionNumber, _package_info_plusVersionString ]
+    objc-classes:    [ FLTPackageInfoPlusPlugin, PodsDummy_package_info_plus ]
+...

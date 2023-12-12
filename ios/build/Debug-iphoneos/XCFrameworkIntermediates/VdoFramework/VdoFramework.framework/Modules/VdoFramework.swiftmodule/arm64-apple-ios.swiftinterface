@@ -1,0 +1,309 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios11.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VdoFramework
+import AVFoundation
+import AVKit
+import Combine
+import CoreMedia
+import Foundation
+import MediaPlayer
+import ObjectiveC
+import Swift
+import SwiftUI
+import UIKit
+@_exported import VdoFramework
+import _AVKit_SwiftUI
+import _Concurrency
+@_hasMissingDesignatedInitializers @objc public class VdoError : ObjectiveC.NSObject {
+  public var message: Swift.String
+  public var code: Swift.Int
+  @objc deinit
+}
+extension VdoFramework.VdoError : Foundation.LocalizedError {
+}
+@_inheritsConvenienceInitializers @objc public class VdoCipher : ObjectiveC.NSObject {
+  public enum LogLevel : Swift.Comparable {
+    case info
+    case warning
+    case error
+    public static func == (a: VdoFramework.VdoCipher.LogLevel, b: VdoFramework.VdoCipher.LogLevel) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func < (a: VdoFramework.VdoCipher.LogLevel, b: VdoFramework.VdoCipher.LogLevel) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static var logLevel: VdoFramework.VdoCipher.LogLevel {
+    get
+    set
+  }
+  @objc public static var preferredCaptionsLanguage: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc public static var enableClipStat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static var enablePiPMode: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func setPlaybackDelegate(delegate: VdoFramework.AssetPlaybackDelegate)
+  public static func getListOfDownloads(filterBy filter: VdoFramework.DownloadInfoFilter = DownloadInfoFilter(videoId: nil)) -> [VdoFramework.DownloadInfo]
+  @available(iOS 12.0, *)
+  public static func getVdoPlayerViewController() -> UIKit.UIViewController
+  @available(iOS 12.0, *)
+  public static func setUIPlayerDelegate(_ delegate: VdoFramework.VdoPlayerViewControllerDelegate)
+  public enum PlaybackProperty : Swift.String {
+    case totalPlayed
+    case totalCovered
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @available(*, deprecated, message: "Api will be removed in an upcoming release")
+  public static func getValueOfPlaybackProperty(_ property: VdoFramework.VdoCipher.PlaybackProperty) -> [Swift.String : Any]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class MediaInfo : ObjectiveC.NSObject {
+  @objc final public let videoId: Swift.String
+  @objc final public let title: Swift.String?
+  @objc final public let mediaDescription: Swift.String?
+  @objc final public let duration: Swift.Double
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class DownloadInfo : ObjectiveC.NSObject {
+  @objc final public let mediaInfo: VdoFramework.MediaInfo
+  @objc final public let poster: Swift.String?
+  @objc public var status: VdoFramework.VdoAsset.DownloadState
+  @objc public var percentDownloaded: Swift.Double
+  @objc final public let aspectRatio: Swift.Double
+  @objc deinit
+}
+@objc public class DownloadInfoFilter : ObjectiveC.NSObject {
+  final public let videoId: [Swift.String]?
+  final public let downloadState: [VdoFramework.VdoAsset.DownloadState]
+  public init(videoId: [Swift.String]?, downloadState: [VdoFramework.VdoAsset.DownloadState] = [.paused, .downloaded, .downloading])
+  @objc deinit
+}
+@objc(AssetPlaybackDelegate) public protocol AssetPlaybackDelegate {
+  @objc func streamPlaybackManager(playerReadyToPlay player: AVFoundation.AVPlayer)
+  @objc func streamPlaybackManager(playerCurrentItemDidChange player: AVFoundation.AVPlayer)
+  @objc func streamLoadError(error: VdoFramework.VdoError)
+}
+@available(iOS 13.0, *)
+public class VdoViewManager : Foundation.ObservableObject {
+  final public let id: Swift.String
+  @Combine.Published @_projectedValueProperty($loadError) public var loadError: VdoFramework.VdoError? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $loadError: Combine.Published<VdoFramework.VdoError?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($posterImage) public var posterImage: Foundation.URL? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $posterImage: Combine.Published<Foundation.URL?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($title) public var title: Swift.String? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $title: Combine.Published<Swift.String?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($downloadState) public var downloadState: VdoFramework.VdoAsset.DownloadState? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $downloadState: Combine.Published<VdoFramework.VdoAsset.DownloadState?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($percentDownload) public var percentDownload: Swift.Double? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $percentDownload: Combine.Published<Swift.Double?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($downloadError) public var downloadError: VdoFramework.VdoError? {
+    get
+    @available(iOS 13.0, *)
+    set
+    @available(iOS 13.0, *)
+    _modify
+  }
+  public var $downloadError: Combine.Published<VdoFramework.VdoError?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init(videoId: Swift.String, otp: Swift.String, playbackInfo: Swift.String)
+  public func initiatePlayback(onReadyToPlay: @escaping (VdoFramework.PlayerView?, VdoFramework.VdoError?) -> Swift.Void)
+  public func initiateDownload()
+  public func deleteDownload()
+  public func cancelDownload()
+  @objc deinit
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+}
+@available(iOS 13.0.0, *)
+public struct PlayerView : SwiftUI.View {
+  public let player: AVFoundation.AVPlayer
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12VdoFramework10PlayerViewV4bodyQrvp", 0) __
+}
+@objc final public class ClosedCaption : ObjectiveC.NSObject, Swift.Codable {
+  final public let lang: Swift.String?
+  final public let label: Swift.String?
+  final public let captionName: Swift.String?
+  @objc override final public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override final public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Poster : Swift.Codable {
+  public let url: Swift.String?
+  public let height: Swift.Double?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class VdoAsset : ObjectiveC.NSObject {
+  @objc public var title: Swift.String?
+  @objc public var downloadState: VdoFramework.VdoAsset.DownloadState
+  @objc public var percentDownload: Swift.Double
+  @objc public var lastPlaybackTime: CoreMedia.CMTime {
+    @objc get
+  }
+  @objc public var captions: [VdoFramework.ClosedCaption]? {
+    get
+  }
+  final public let videoId: Swift.String
+  public var duration: Swift.Double?
+  public var aspectRatio: Swift.Double? {
+    get
+  }
+  public var posters: [VdoFramework.Poster]?
+  @_hasMissingDesignatedInitializers @objc public class VideoQuality : ObjectiveC.NSObject {
+    final public let resolution: Swift.String
+    final public let bitrate: Swift.UInt
+    public var active: Swift.Bool {
+      get
+    }
+    @objc deinit
+  }
+  @available(*, deprecated, message: "Use createAsset(videoId: String, onLoad: @escaping (VdoAsset?, VdoError?) -> Void) instead")
+  @objc public static func makeAsset(videoId: Swift.String, onLoad: @escaping (VdoFramework.VdoAsset) -> Swift.Void)
+  @objc public static func createAsset(videoId: Swift.String, playerId: Swift.String? = nil, onLoad: @escaping (VdoFramework.VdoAsset?, VdoFramework.VdoError?) -> Swift.Void)
+  @objc public func getVideoQualities() -> [VdoFramework.VdoAsset.VideoQuality]
+  @objc public func playOnline(otp: Swift.String, playbackInfo: Swift.String, defaultVideoQuality: VdoFramework.VdoAsset.VideoQuality? = nil)
+  @objc public func enableAutoAdaptation()
+  @objc public func enableManualAdaptation(_ activeQuality: VdoFramework.VdoAsset.VideoQuality)
+  @objc public func playOffline()
+  @objc public func getDownloadState() -> VdoFramework.VdoAsset.DownloadState
+  @objc public func deleteDownload()
+  @objc public func cancelDownload()
+  @objc public func startDownload(otp: Swift.String, playbackInfo: Swift.String, videoQuality: VdoFramework.VdoAsset.VideoQuality? = nil)
+  @objc public func pauseDownload()
+  @objc public func resumeDownload()
+  @objc deinit
+}
+extension VdoFramework.VdoAsset {
+  public static func == (lhs: VdoFramework.VdoAsset, rhs: VdoFramework.VdoAsset) -> Swift.Bool
+}
+extension VdoFramework.VdoAsset {
+  @objc(DownloadState) public enum DownloadState : Swift.Int, Swift.RawRepresentable {
+    case notDownloaded
+    case downloading
+    case downloaded
+    case paused
+    public typealias RawValue = Swift.String
+    public var rawValue: VdoFramework.VdoAsset.DownloadState.RawValue {
+      get
+    }
+    public init?(rawValue: VdoFramework.VdoAsset.DownloadState.RawValue)
+  }
+}
+extension VdoFramework.VdoAsset {
+  @_inheritsConvenienceInitializers @objc public class Keys : ObjectiveC.NSObject {
+    @objc public static let videoId: Swift.String
+    @objc public static let percentDownloaded: Swift.String
+    @objc public static let downloadState: Swift.String
+    @objc public static let message: Swift.String
+    @objc public static let code: Swift.String
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension VdoFramework.VdoAsset {
+  @objc dynamic public func setCaption(_ caption: VdoFramework.ClosedCaption?) -> Swift.Bool
+  @objc dynamic public func getCurrentEnabledCaption() -> VdoFramework.ClosedCaption?
+}
+extension Foundation.NSNotification.Name {
+  public static let AssetDownloadProgress: Foundation.Notification.Name
+  public static let AssetDownloadStateChanged: Foundation.Notification.Name
+  public static let AssetPersistenceManagerDidRestoreState: Foundation.Notification.Name
+  public static let AssetDownloadFailed: Foundation.Notification.Name
+}
+@objc public protocol VdoPlayerViewControllerDelegate {
+  @objc optional func didClosePlayer(controller: UIKit.UIViewController)
+  @objc optional func didDismissAlert()
+  @objc optional func didTapPlay(for id: Swift.String)
+  @objc optional func didTapPause(for id: Swift.String)
+  @objc optional func didTapForward(for id: Swift.String)
+  @objc optional func didTapBackward(for id: Swift.String)
+  @objc optional func didTapClose(for id: Swift.String)
+  @objc optional func didTapEnterFullScreen(for id: Swift.String)
+  @objc optional func didTapExitFullScreen(for id: Swift.String)
+  @objc optional func didTapPip(for id: Swift.String)
+  @objc optional func didTapAirplay(for id: Swift.String)
+  @objc optional func didSeek(for id: Swift.String, to time: Swift.Float64)
+  @objc optional func didChangePlayerRate(for id: Swift.String, to speed: Swift.Float)
+  @objc optional func didChangeCaption(for id: Swift.String, to name: Swift.String, code: Swift.String)
+  @objc optional func didChangeChapter(for id: Swift.String, to name: Swift.String, at time: Swift.Float64)
+  @objc optional func didSetAdaptation(for id: Swift.String, to quality: VdoFramework.VdoAsset.VideoQuality?)
+  @objc optional func didUpdatePlayback(for id: Swift.String, toTime time: Swift.Float64)
+  @objc optional func playbackDidPlayToEnd(for id: Swift.String)
+}
+extension VdoFramework.VdoCipher.LogLevel : Swift.Hashable {}
+extension VdoFramework.VdoCipher.PlaybackProperty : Swift.Equatable {}
+extension VdoFramework.VdoCipher.PlaybackProperty : Swift.Hashable {}
+extension VdoFramework.VdoCipher.PlaybackProperty : Swift.RawRepresentable {}
+extension VdoFramework.VdoAsset.DownloadState : Swift.Equatable {}
+extension VdoFramework.VdoAsset.DownloadState : Swift.Hashable {}

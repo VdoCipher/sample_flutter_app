@@ -1,0 +1,11 @@
+framework module VdoFramework {
+  umbrella header "VdoFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module VdoFramework.Swift {
+    header "VdoFramework-Swift.h"
+    requires objc
+}
