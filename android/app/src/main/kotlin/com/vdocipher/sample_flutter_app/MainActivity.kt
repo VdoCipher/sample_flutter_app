@@ -1,7 +1,6 @@
 package com.vdocipher.sample_flutter_app
 
 import android.os.Build
-import android.view.ViewGroup
 import android.view.WindowManager.LayoutParams.FLAG_SECURE
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterFragmentActivity
@@ -13,7 +12,7 @@ class MainActivity : FlutterFragmentActivity() {
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
         //Check if player is attached to the activity currently.
-        if (this.supportFragmentManager.findFragmentByTag(com.vdocipher.sample_flutter_app.MainActivity.Companion.TAG) != null) {
+        if (this.supportFragmentManager.findFragmentByTag(TAG) != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 enterPictureInPictureMode()
             }
@@ -26,6 +25,6 @@ class MainActivity : FlutterFragmentActivity() {
     }
 
     companion object {
-        private const val TAG = "com.vdocipher.aegis.ui.view.VdoPlayerUIFragment"
+        private const val TAG = "VdoPlayerUIFragment"
     }
 }
