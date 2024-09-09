@@ -17,3 +17,17 @@ class Utils {
     }
   }
 }
+
+String formatDuration(int seconds) {
+  final int hours = seconds ~/ 3600;
+  final int minutes = (seconds % 3600) ~/ 60;
+  final int remainingSeconds = seconds % 60;
+
+  if (hours > 0) {
+    return '${hours}h ${minutes}m ${remainingSeconds}s';
+  } else if (minutes > 0) {
+    return '${minutes}m ${remainingSeconds}s';
+  } else {
+    return '${remainingSeconds}s';
+  }
+}

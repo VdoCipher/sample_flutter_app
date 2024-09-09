@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sample_flutter_app/samples.dart';
 import 'package:sample_flutter_app/views/vdo_download_view.dart';
+import 'package:sample_flutter_app/views/vdo_playlist_view.dart';
 import 'package:sample_flutter_app/views/vdoplayback_view.dart';
 import 'package:vdocipher_flutter/vdocipher_flutter.dart';
 
@@ -117,6 +118,28 @@ class MyHomeState extends State<MyHome> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  ElevatedButton(
+                    onPressed: _goToVideoPlaylist,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          const Icon(
+                            Icons.playlist_play,
+                            size: 48,
+                          ),
+                          const SizedBox(
+                            height: 4,
+                          ),
+                          Text('Open Playlist'.toUpperCase(),
+                              style: const TextStyle(fontSize: 16)),
+                        ],
+                      ),
+                    ),
+                  ),
                   if (!kIsWeb)
                     const Padding(
                       padding: EdgeInsets.only(
@@ -180,6 +203,17 @@ class MyHomeState extends State<MyHome> {
             embedInfo: sample_1,
             controls: true,
           );
+        },
+      ),
+    );
+  }
+
+  void _goToVideoPlaylist() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        settings: const RouteSettings(name: '/player-ui/sample/playlist'),
+        builder: (BuildContext context) {
+          return const VdoPlaylistView();
         },
       ),
     );
