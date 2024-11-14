@@ -29,49 +29,49 @@ class VdoPlaybackViewState extends State<VdoPlaybackView> {
     }
     return Scaffold(
         body: SafeArea(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Flexible(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    SizedBox(
-                      width: _getPlayerWidth(),
-                      height: _getPlayerHeight(),
-                      child: VdoPlayer(
-                        embedInfo: embedInfo!,
-                        aspectRatio: aspectRatio,
-                        onError: _onVdoError,
-                        onFullscreenChange: _onFullscreenChange,
-                        onPlayerCreated: _onPlayerCreated,
-                        controls: widget.controls,
-                      ),
-                    ),
-                    if (_controller == null ||
-                        widget.controls ||
-                        MediaQuery.of(context).size.width < 300 ||
-                        kIsWeb)
-                      const SizedBox.shrink()
-                    else
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: _isFullScreen.value
-                            ? MediaQuery.of(context).size.height
-                            : _getHeightForWidth(MediaQuery.of(context).size.width),
-                        child: VdoCustomControllerView(
-                          controller: _controller,
-                          onError: _onVdoError,
-                          onFullscreenChange: _onFullscreenChange,
-                        ),
-                      ),
-                  ],
-                )),
-            ValueListenableBuilder(
-                valueListenable: _isFullScreen,
-                builder: (context, dynamic value, child) {
-                  return value ? const SizedBox.shrink() : _nonFullScreenContent();
-                }),
-          ]),
-        ));
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Flexible(
+            child: Stack(
+          alignment: Alignment.center,
+          children: [
+            SizedBox(
+              width: _getPlayerWidth(),
+              height: _getPlayerHeight(),
+              child: VdoPlayer(
+                embedInfo: embedInfo!,
+                aspectRatio: aspectRatio,
+                onError: _onVdoError,
+                onFullscreenChange: _onFullscreenChange,
+                onPlayerCreated: _onPlayerCreated,
+                controls: widget.controls,
+              ),
+            ),
+            if (_controller == null ||
+                widget.controls ||
+                MediaQuery.of(context).size.width < 300 ||
+                kIsWeb)
+              const SizedBox.shrink()
+            else
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: _isFullScreen.value
+                    ? MediaQuery.of(context).size.height
+                    : _getHeightForWidth(MediaQuery.of(context).size.width),
+                child: VdoCustomControllerView(
+                  controller: _controller,
+                  onError: _onVdoError,
+                  onFullscreenChange: _onFullscreenChange,
+                ),
+              ),
+          ],
+        )),
+        ValueListenableBuilder(
+            valueListenable: _isFullScreen,
+            builder: (context, dynamic value, child) {
+              return value ? const SizedBox.shrink() : _nonFullScreenContent();
+            }),
+      ]),
+    ));
   }
 
   _onVdoError(VdoError vdoError) {
@@ -142,8 +142,8 @@ class VdoPlaybackViewState extends State<VdoPlaybackView> {
     return kIsWeb
         ? 550
         : _isFullScreen.value
-        ? MediaQuery.of(context).size.height
-        : _getHeightForWidth(MediaQuery.of(context).size.width);
+            ? MediaQuery.of(context).size.height
+            : _getHeightForWidth(MediaQuery.of(context).size.width);
   }
 
   double _getHeightForWidth(double width) {

@@ -217,10 +217,10 @@ packages:
     dependency: "direct main"
     description:
       name: vdocipher_flutter
-      sha256: "5af68a430c4d592f2cc521034ddb6ac824b129a21eab5e1a1fec90d09589dcc3"
+      sha256: a89d0fcd221de7cc390ac3113fc8480c2a9db529038df9d5696d941f384b3dce
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.7"
+    version: "2.7.2"
   vector_math:
     dependency: transitive
     description:

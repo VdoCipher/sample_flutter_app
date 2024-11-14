@@ -1,9 +1,9 @@
 PODS:
   - Flutter (1.0.0)
-  - vdocipher_flutter (2.6.7):
+  - vdocipher_flutter (2.7.2):
     - Flutter
-    - VdoFramework (= 2.5.8)
-  - VdoFramework (2.5.8)
+    - VdoFramework (= 2.7.0)
+  - VdoFramework (2.7.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -21,8 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  vdocipher_flutter: 1b27a845eb777e67d40d9c6c30bccf38f97fc3f5
-  VdoFramework: 935f65d6d900581c6b684434e4b7ab795d886b4d
+  vdocipher_flutter: 94d97ceb404fcf7320653e77a9113abf41a41832
+  VdoFramework: 02de27ac036e24d2ce4cbd81d3634b715dff52c2
 
 PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
 

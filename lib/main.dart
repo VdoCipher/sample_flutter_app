@@ -65,7 +65,7 @@ class MyHomeState extends State<MyHome> {
                     child: Text(
                       'Online Playback',
                       style:
-                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                   ),
                   ElevatedButton(
@@ -124,7 +124,7 @@ class MyHomeState extends State<MyHome> {
                   ElevatedButton(
                     onPressed: _goToVideoPlaylist,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(left: 32, top: 8, bottom: 8, right: 32),
                       child: Column(
                         children: [
                           const Icon(
