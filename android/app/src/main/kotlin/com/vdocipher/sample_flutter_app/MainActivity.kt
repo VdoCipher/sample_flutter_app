@@ -19,7 +19,7 @@ class MainActivity : FlutterFragmentActivity() {
         }
     }
 
-    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         window.addFlags(FLAG_SECURE)
         super.configureFlutterEngine(flutterEngine)
     }

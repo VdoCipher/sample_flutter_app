@@ -64,7 +64,7 @@ class MyHomeState extends State<MyHome> {
                     child: Text(
                       'Online Playback',
                       style:
-                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                   ),
                   ElevatedButton(

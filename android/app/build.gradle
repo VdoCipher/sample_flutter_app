@@ -27,15 +27,25 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 
 android {
-    compileSdkVersion 34
+    namespace 'com.vdocipher.sample_flutter_app'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.vdocipher.sample_flutter_app"
         minSdkVersion 21
         targetSdkVersion 34
+        compileSdk 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
         multiDexEnabled true
     }
 
