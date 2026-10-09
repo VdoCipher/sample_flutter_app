@@ -18,3 +18,7 @@ This sample application can be run as it is without any configuration. Just clon
 4. Open `pubspec.yaml`, click on "Pub get" in the top right. Alternatively, run `flutter pub get` in your app's root directory.
 5. Run the app on a physical android device.
 
+
+## Android compiler diagnostics
+
+For deprecated-API and unchecked-operation notes from the published Flutter plugin, see the [Android Java warning report](docs/android-java-warnings.md) and its diagnostic init script. The report includes reproduction steps and source locations for version 2.8.6; it does not contain a plugin fix.

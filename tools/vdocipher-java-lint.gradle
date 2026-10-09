@@ -1,0 +1,9 @@
+// Run from a consuming Flutter application's android directory with --init-script.
+// Diagnostic only: this does not suppress warnings or modify plugin sources.
+gradle.beforeProject { project ->
+    if (project.name == 'vdocipher_flutter') {
+        project.tasks.withType(JavaCompile).configureEach {
+            options.compilerArgs.addAll(['-Xlint:deprecation', '-Xlint:unchecked'])
+        }
+    }
+}
